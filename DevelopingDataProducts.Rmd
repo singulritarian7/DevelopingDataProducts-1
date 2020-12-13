@@ -1,0 +1,36 @@
+---
+title: "Rizal Monument Leaflet Map"
+author: "Gale Nierva"
+date: "12/13/2020"
+output: html_document
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Summary
+
+This is solely for the purpose of creating a Leaflet Map. The source code is available at [GitHub](https://github.com/smeah25/DevelopingDataProducts).
+
+## Leaflet Map
+Create a leaflet map object.
+```{r cars}
+library(leaflet)
+map <- leaflet() %>% addTiles()
+```
+
+Create a marker with a picture of Rizal Monument and a link to its homepage.
+```{r}
+rizalmonumentIcon <- makeIcon(
+   iconUrl = "http://www.officialgazette.gov.ph/rizal-monument/img/7-present%20day/8.jpg",
+   iconWidth = 30*408/255, iconHeight = 30,
+   iconAnchorX = 30*408/255/2, iconAnchorY = 30/2
+)
+```
+
+Add the marker to the map and display the map.
+```{r}
+rizalmonumentPopup <- c("<a href= 'http://www.officialgazette.gov.ph/rizal-monument/' >Rizal Monument<br><img src='http://www.officialgazette.gov.ph/rizal-monument/img/7-present%20day/8.jpg' width='210' height='132'  alt='Rizal Monument' title='Rizal Monument'></a>")
+map %>%
+   addTiles() %>%
+   addMarkers(lat=14.5817939, lng=120.9770245, popup = rizalmonumentPopup)
+```
