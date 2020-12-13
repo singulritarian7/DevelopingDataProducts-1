@@ -1,0 +1,12 @@
+name: ShinyApp
+title: ShinyApp
+username:
+account: smeah
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 3395790
+bundleId: 3983654
+url: https://smeah.shinyapps.io/ShinyApp/
+when: 1607882675.50164
+asMultiple: FALSE
+asStatic: FALSE
